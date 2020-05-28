@@ -3,6 +3,7 @@
 1. TaskDelay Class:
 
 Questions:
+
 a) [Test1]  - What is the excepted order of `Debug.WriteLine` invocation and why?
 	--> 1, 2, 3, 4, 5 ,6 - await is waiting for the `Delay2000` execution to finish (even though Task.Delay is greater than in the `Delay1000` )
 
@@ -12,6 +13,7 @@ b) [Test2]  - What is the excepted order of `Debug.WriteLine` invocation and why
 
 2. TaskWhenTests Class:
 Questions:
+
 a) [Test1] - How long the test will run? (under five seconds?)
 	--> Since we first await for `ReturnFoo`, which takes atleast 3 seconds, and then we await `ReturnFooFoo`, which takes atleast 4 seconds, the overall test will take atleast 7 seconds - it will fail
 
@@ -20,6 +22,7 @@ b) [Test2] - How long the test will run? (under five seconds?)
 
 
 3. TaskException Class:
+
 Questions:
 a) [Test1] - What will be Debug output? Will the exception from `ThrowException` be handled (exceptionHandled == true;)
 	 --> 1, 2, 3 *exception*, we invoke `ThrowException` in the main thread, but we don't await it in-line. The exception will be propagated during the `await` operation on task - in the try method. 
