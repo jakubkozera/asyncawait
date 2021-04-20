@@ -32,3 +32,6 @@ a) [Test1] - What will be Debug output? Will the exception from `ThrowException`
 	 
 	 --> 1, 2, 3 *exception*, we invoke `ThrowException` in the main thread, but we don't await it in-line. The exception will be propagated during the `await` operation on task - in the try method. 
 		Meaning that the error wil be handled and test will pass ("4" will not be displayed)
+
+Useful resources:
+https://www.codeproject.com/Articles/5299501/Async-Await-Explained-with-Diagrams-and-Examples?utm_content=bufferbf04d&utm_medium=social&utm_source=linkedin.com&utm_campaign=buffer#canceltoken
